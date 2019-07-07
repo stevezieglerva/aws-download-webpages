@@ -30,8 +30,8 @@ def lambda_handler(event, context):
 			res = download_page(url.strip())
 			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
 			log.critical("processed url", result=result)
-			filename = re.sub(r"[^a-zA-Z0-9-_]", "", url)
-			create_s3_text_file("svz-aws-download-webpages", "ouput/" + filename, res.text, s3)
+			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url)
+			create_s3_text_file("svz-aws-download-webpages", "output/" + filename, res.text, s3)
 			return result
 		else:
 			file_data = get_urls_from_file_text(event)
