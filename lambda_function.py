@@ -24,9 +24,11 @@ def lambda_handler(event, context):
 			log = setup_logging("aws-download-webpages", event, aws_request_id)
 
 		if "async" in event:
+			url = event["url"]
 			res = download_page(url.strip())
-			log.critical("processed url", url=url, status_code=res.status_code, length=len(res.text))
-			pass
+			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
+			log.critical("processed url", result=result)
+			return result
 		else:
 
 			file_data = get_urls_from_file_text(event)
