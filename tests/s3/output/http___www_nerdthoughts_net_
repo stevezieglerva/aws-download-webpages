@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Nerd Thoughts | Collection of posts on nerdy stuff that I like.</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Nerd Thoughts" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Collection of posts on nerdy stuff that I like." />
+<meta property="og:description" content="Collection of posts on nerdy stuff that I like." />
+<link rel="canonical" href="/" />
+<meta property="og:url" content="/" />
+<meta property="og:site_name" content="Nerd Thoughts" />
+<script type="application/ld+json">
+{"name":"Nerd Thoughts","description":"Collection of posts on nerdy stuff that I like.","@type":"WebSite","url":"/","headline":"Nerd Thoughts","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Nerd Thoughts" /><script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37418446-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+  
+</head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nerd Thoughts</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/work/">Work</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><p><img src="/assets/home-page-clouds.jpeg" alt="Sunrise Clouds" /></p>
+<h1 id="nerd-thoughts">Nerd Thoughts</h1>
+
+<h2 class="post-list-heading">Posts</h2>
+    <ul class="post-list"><li><span class="post-meta">Jun 2, 2019</span>
+        <h3>
+          <a class="post-link" href="/2019/06/02/script-to-list-aws-services-in-use.html">
+            Script To List AWS Services In Use
+          </a>
+        </h3></li><li><span class="post-meta">Dec 26, 2018</span>
+        <h3>
+          <a class="post-link" href="/2018/12/26/resolving-git-multiple-credential-helpers.html">
+            Resolving Git Multiple Credential Helpers
+          </a>
+        </h3></li><li><span class="post-meta">Dec 22, 2018</span>
+        <h3>
+          <a class="post-link" href="/2018/12/22/how-to-use-a-meeting-to-elevate-a-team-member.html">
+            How To Use A Meeting To Elevate a Team Member
+          </a>
+        </h3></li><li><span class="post-meta">Oct 12, 2018</span>
+        <h3>
+          <a class="post-link" href="/2018/10/12/elasticsearch-from-open-source.html">
+            Elasticsearch - From open source to $B
+          </a>
+        </h3></li><li><span class="post-meta">Jul 22, 2018</span>
+        <h3>
+          <a class="post-link" href="/2018/07/22/Tailing-CloudWatch-Logs.html">
+            Tailing CloudWatch Logs
+          </a>
+        </h3></li><li><span class="post-meta">Mar 26, 2018</span>
+        <h3>
+          <a class="post-link" href="/2018/03/26/under-construction.html">
+            Under Construction
+          </a>
+        </h3></li><li><span class="post-meta">Mar 4, 2018</span>
+        <h3>
+          <a class="post-link" href="/2018/03/finally-posted-on-devto.html">
+            Finally posted on dev.to
+          </a>
+        </h3></li><li><span class="post-meta">Sep 11, 2017</span>
+        <h3>
+          <a class="post-link" href="/2017/09/losing-confidence-cleaning-up-after.html">
+            Losing Confidence Cleaning Up After Equifax
+          </a>
+        </h3></li><li><span class="post-meta">Jan 5, 2017</span>
+        <h3>
+          <a class="post-link" href="/2017/01/05/from-pic-of-sweden-to-my-toughest.html">
+            From A Pic of Sweden To My Toughest Customer
+          </a>
+        </h3></li><li><span class="post-meta">Nov 25, 2016</span>
+        <h3>
+          <a class="post-link" href="/2016/11/dadsplaining-at-work.html">
+            Dadsplaining at Work
+          </a>
+        </h3></li><li><span class="post-meta">Jul 25, 2016</span>
+        <h3>
+          <a class="post-link" href="/2016/07/25/comparing-government-code-challenges.html">
+            Comparing Government Code Challenges
+          </a>
+        </h3></li><li><span class="post-meta">Apr 2, 2016</span>
+        <h3>
+          <a class="post-link" href="/2016/04/creative-geoparser-tool-for-natural.html">
+            Creative Geoparser Tool for Natural Language
+          </a>
+        </h3></li><li><span class="post-meta">Oct 9, 2015</span>
+        <h3>
+          <a class="post-link" href="/2015/10/09/how-to-easily-log-your-twitter-data.html">
+            How to Easily Log Your Twitter Data Using Zapier and Dropbox
+          </a>
+        </h3></li><li><span class="post-meta">Aug 19, 2015</span>
+        <h3>
+          <a class="post-link" href="/2015/08/give-credit-like-quarterback.html">
+            Give Credit Like a Quarterback
+          </a>
+        </h3></li><li><span class="post-meta">Apr 25, 2015</span>
+        <h3>
+          <a class="post-link" href="/2015/04/temperature-chart-to-help-kids-pick.html">
+            Temperature Chart To Help Kids Pick Their Clothes
+          </a>
+        </h3></li><li><span class="post-meta">Mar 24, 2015</span>
+        <h3>
+          <a class="post-link" href="/2015/03/beauty-of-elasticsearch-bool-query.html">
+            Beauty of Elasticsearch Bool Query Should Clauses for Boosting
+          </a>
+        </h3></li><li><span class="post-meta">Feb 6, 2015</span>
+        <h3>
+          <a class="post-link" href="/2015/02/yeah-we-agile.html">
+            Yeah, we&#39;re Agile.
+          </a>
+        </h3></li><li><span class="post-meta">Jan 2, 2013</span>
+        <h3>
+          <a class="post-link" href="/2013/01/hello-world.html">
+            Hello World
+          </a>
+        </h3></li></ul>
+
+    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nerd Thoughts</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Nerd Thoughts</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/stevezieglerva"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">stevezieglerva</span></a></li><li><a href="https://www.twitter.com/stevezieglerva"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stevezieglerva</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Collection of posts on nerdy stuff that I like.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

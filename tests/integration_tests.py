@@ -54,7 +54,7 @@ class IntegrationTests(unittest.TestCase):
 		
 		# Assert
 		self.assertEqual(result["files_found"], 1)
-		self.assertEqual(result["urls_found"], 2)
+		self.assertEqual(result["urls_found"], 4)
 
 
 
