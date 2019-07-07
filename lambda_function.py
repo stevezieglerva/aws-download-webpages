@@ -27,8 +27,8 @@ def lambda_handler(event, context):
 
 		if "async" in event:
 			s3 = boto3.resource("s3")
-			url = event["url"]
-			res = download_page(url.strip())
+			url = event["url"].strip()
+			res = download_page(url)
 			print(str(res.status_code) + "-" + url)
 			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
 			log.critical("processed url", result=result)
@@ -116,7 +116,7 @@ def invoke_self_async(event, context):
 		FunctionName="aws-download-webpage",
 		InvocationType='Event',
 		Payload=bytes(json.dumps(event), "utf-8"))
-	stream_firehose_string("aws-download-webpage", "async\t{}\n".format(event["url"]))
+	stream_firehose_string("aws-download-webpages-async", "async\t{}\n".format(event["url"]))
 
 
 
