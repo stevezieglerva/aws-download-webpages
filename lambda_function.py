@@ -118,7 +118,7 @@ def invoke_self_async(event, context):
 		InvocationType='Event',
 		Payload=bytes(json.dumps(event), "utf-8"))
 	local_time = LocalTime()
-	stream_firehose_string("aws-download-webpages-async", "{}\t{}async\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), event["url"]))
+	stream_firehose_string("aws-download-webpages-async", "{}\t{}\tasync\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), event["url"]))
 
 
 
