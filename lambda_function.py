@@ -28,7 +28,7 @@ def lambda_handler(event, context):
 			s3 = boto3.resource("s3")
 			url = event["url"]
 			res = download_page(url.strip())
-			print(res.status_code)
+			print(res.status_code + "-" + url)
 			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
 			log.critical("processed url", result=result)
 			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url) + ".html"
