@@ -23,18 +23,27 @@ def lambda_handler(event, context):
 		else:
 			log = setup_logging("aws-download-webpages", event, aws_request_id)
 
-		file_data = get_urls_from_file_text(event)
-		for key, value in file_data.items():
-			log.critical("read url text file", url_file=key)
-			url_list_text = value 
-			urls = url_list_text.split("\n")
-			for url in urls:
-				res = download_page(url.strip())
-				log.critical("processed url", url=url, status_code=res.status_code, length=len(res.text))
-		print(file_data)
+		if "async" in event:
+			res = download_page(url.strip())
+			log.critical("processed url", url=url, status_code=res.status_code, length=len(res.text))
+			pass
+		else:
 
-
-		print("Finished")
+			file_data = get_urls_from_file_text(event)
+			files_found = len(file_data)
+			urls_found = 0
+			for key, value in file_data.items():
+				log.critical("read url text file", url_file=key)
+				url_list_text = value 
+				urls = url_list_text.split("\n")
+				urls_found = len(urls)
+				for url in urls:
+					event["url"] = url
+					invoke_self_async(event, context)
+					log.critical("aync call", url=url)
+			print("Finished")
+			result = {"processing_type" : "read_url_files", "files_found" : files_found, "urls_found" : urls_found}
+			return result
 
 	except Exception as e:
 		print("Exception: "+ str(e))

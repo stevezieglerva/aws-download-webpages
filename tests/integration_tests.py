@@ -50,9 +50,11 @@ class IntegrationTests(unittest.TestCase):
 	def test_lambda_handler__given_valid_inputs__runs_without_exceptions(self):
 		# Act
 		result = lambda_handler(s3_event, None)
+		print(json.dumps(result, indent=3))
 		
 		# Assert
-		self.assertEqual(1, 1)
+		self.assertEqual(result["files_found"], 1)
+		self.assertEqual(result["urls_found"], 2)
 
 
 
