@@ -30,7 +30,6 @@ def lambda_handler(event, context):
 			log.critical("processed url", result=result)
 			return result
 		else:
-
 			file_data = get_urls_from_file_text(event)
 			files_found = len(file_data)
 			urls_found = 0
@@ -42,7 +41,6 @@ def lambda_handler(event, context):
 				for url in urls:
 					event["url"] = url
 					invoke_self_async(event, context)
-					log.critical("aync call", url=url)
 			print("Finished")
 			result = {"processing_type" : "read_url_files", "files_found" : files_found, "urls_found" : urls_found}
 			return result
@@ -106,7 +104,7 @@ def invoke_self_async(event, context):
 	event["async"] = True
 	log.warning("invoke_self_async", context=context)
 	boto3.client("lambda").invoke(
-		FunctionName="aws-lnkchk-extract-links",
+		FunctionName="aws-download-webpage",
 		InvocationType='Event',
 		Payload=bytes(json.dumps(event), "utf-8"))
 
