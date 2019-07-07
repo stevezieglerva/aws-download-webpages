@@ -1,0 +1,13 @@
+Include/**
+Lib/**
+Scripts/**
+tcl/**
+__pycache__/**
+tests/__pycache__/**
+tests/s3/*.*
+lambda_function.zip
+*.bat
+*.docx
+*.xlsx
+*.code-workspace
+*.txt
