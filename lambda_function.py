@@ -34,7 +34,7 @@ def lambda_handler(event, context):
 			log.critical("processed url", result=result)
 			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url) + ".html"
 			create_s3_text_file("svz-aws-download-webpages", "output/" + filename, res.text, s3)
-			stream_firehose_string("aws-download-webpage", "downloaded\t{}\t{}".format(url, res.status_code))
+			stream_firehose_string("aws-download-webpage", "downloaded\t{}\t{}\n".format(url, res.status_code))
 
 			return result
 		else:
@@ -116,7 +116,7 @@ def invoke_self_async(event, context):
 		FunctionName="aws-download-webpage",
 		InvocationType='Event',
 		Payload=bytes(json.dumps(event), "utf-8"))
-	stream_firehose_string("aws-download-webpage", "async\t{}".format(event["url"]))
+	stream_firehose_string("aws-download-webpage", "async\t{}\n".format(event["url"]))
 
 
 
