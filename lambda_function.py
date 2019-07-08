@@ -11,6 +11,7 @@ import bs4
 import re
 from S3TextFromLambdaEvent import *
 from firehose_helpers import *
+import uuid
 
 
 def lambda_handler(event, context):
@@ -28,15 +29,16 @@ def lambda_handler(event, context):
 		if "async" in event:
 			s3 = boto3.resource("s3")
 			url = event["url"].strip()
-			res = download_page(url)
-			print(str(res.status_code) + "-" + url)
-			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
-			log.critical("processed url", result=result)
-			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url) + ".html"
-			create_s3_text_file("svz-aws-download-webpages", "output/" + filename, res.text, s3)
+##			res = download_page(url)
+##			status_code = res.status_code
+##			print(str(res.status_code) + "-" + url)
+##			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
+##			log.critical("processed url", result=result)
+##			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url) + ".html"
+##			create_s3_text_file("svz-aws-download-webpages", "output/" + filename, res.text, s3)
 			local_time = LocalTime()
-			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, res.status_code))
-##			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, 0))
+##			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, status_code))
+			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, 0))
 
 			return ""
 		else:
@@ -118,6 +120,10 @@ def invoke_self_async(event, context):
 		FunctionName="aws-download-webpage",
 		InvocationType='Event',
 		Payload=bytes(json.dumps(event), "utf-8"))
+
+	s3 = boto3.resource("s3")
+	filename = str(uuid.uuid1())
+	create_s3_text_file("svz-aws-download-webpages", "url_files/" + filename, event["url"], s3)	
 	local_time = LocalTime()
 	stream_firehose_string("aws-download-webpages-async", "{}\t{}\tasync\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), event["url"]))
 
