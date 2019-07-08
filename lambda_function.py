@@ -26,18 +26,19 @@ def lambda_handler(event, context):
 			log = setup_logging("aws-download-webpages", event, aws_request_id)
 
 		if "async" in event:
-			s3 = boto3.resource("s3")
-			url = event["url"].strip()
-			res = download_page(url)
-			print(str(res.status_code) + "-" + url)
-			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
-			log.critical("processed url", result=result)
-			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url) + ".html"
-			create_s3_text_file("svz-aws-download-webpages", "output/" + filename, res.text, s3)
-			local_time = LocalTime()
-			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, res.status_code))
+##			s3 = boto3.resource("s3")
+##			url = event["url"].strip()
+##			res = download_page(url)
+##			print(str(res.status_code) + "-" + url)
+##			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
+##			log.critical("processed url", result=result)
+##			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url) + ".html"
+##			create_s3_text_file("svz-aws-download-webpages", "output/" + filename, res.text, s3)
+##			local_time = LocalTime()
+##			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, res.status_code))
+			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, 0))
 
-			return result
+			return ""
 		else:
 			file_data = get_urls_from_file_text(event)
 			files_found = len(file_data)
