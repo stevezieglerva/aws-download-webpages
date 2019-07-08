@@ -122,7 +122,7 @@ def invoke_self_async(event, context):
 		Payload=bytes(json.dumps(event), "utf-8"))
 
 	s3 = boto3.resource("s3")
-	filename = str(uuid.uuid1())
+	filename = str(uuid.uuid1()) + ".txt"
 	create_s3_text_file("svz-aws-download-webpages", "url_files/" + filename, event["url"], s3)	
 	local_time = LocalTime()
 	stream_firehose_string("aws-download-webpages-async", "{}\t{}\tasync\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), event["url"]))
