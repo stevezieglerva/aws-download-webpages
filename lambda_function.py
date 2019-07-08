@@ -27,7 +27,7 @@ def lambda_handler(event, context):
 
 		if "async" in event:
 ##			s3 = boto3.resource("s3")
-##			url = event["url"].strip()
+			url = event["url"].strip()
 ##			res = download_page(url)
 ##			print(str(res.status_code) + "-" + url)
 ##			result = {"processing_type" : "async download urls", "url" : url, "status_code" : res.status_code, "length" : len(res.text)}
