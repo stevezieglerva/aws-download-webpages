@@ -113,17 +113,17 @@ def strip_html(html):
 
 
 def invoke_self_async(event, context):
-	log = structlog.get_logger()
-	event["async"] = True
-	log.warning("invoke_self_async", context=context)
-	boto3.client("lambda").invoke(
-		FunctionName="aws-download-webpage",
-		InvocationType='Event',
-		Payload=bytes(json.dumps(event), "utf-8"))
-
-	s3 = boto3.resource("s3")
-	filename = str(uuid.uuid1()) + ".txt"
-	create_s3_text_file("svz-aws-download-webpages", "url_files/" + filename, event["url"], s3)	
+##	log = structlog.get_logger()
+##	event["async"] = True
+##	log.warning("invoke_self_async", context=context)
+##	boto3.client("lambda").invoke(
+##		FunctionName="aws-download-webpage",
+##		InvocationType='Event',
+##		Payload=bytes(json.dumps(event), "utf-8"))
+##
+##	s3 = boto3.resource("s3")
+##	filename = str(uuid.uuid1()) + ".txt"
+##	create_s3_text_file("svz-aws-download-webpages", "url_files/" + filename, event["url"], s3)	
 	local_time = LocalTime()
 	stream_firehose_string("aws-download-webpages-async", "{}\t{}\tasync\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), event["url"]))
 
