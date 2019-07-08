@@ -34,7 +34,7 @@ def lambda_handler(event, context):
 ##			log.critical("processed url", result=result)
 ##			filename = re.sub(r"[^a-zA-Z0-9-_]", "_", url) + ".html"
 ##			create_s3_text_file("svz-aws-download-webpages", "output/" + filename, res.text, s3)
-##			local_time = LocalTime()
+			local_time = LocalTime()
 ##			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, res.status_code))
 			stream_firehose_string("aws-download-webpage", "{}\t{}\tdownloaded\t{}\t{}\n".format(local_time.get_utc_timestamp(), local_time.get_local_timestamp(), url, 0))
 
